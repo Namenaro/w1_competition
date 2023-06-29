@@ -29,8 +29,15 @@ class Distr:
     def get_main_sample(self):
         return self.sample
 
-    def get_p_of_event(self, left, right):
+    def get_p_of_event(self, val1, val2):
         num_elements = 0
+        if val1>val2:
+            left = val2
+            right = val1
+        else:
+            left = val1
+            right = val2
+
         for element in self.sample:
             if element <= right and element >= left:
                 num_elements += 1

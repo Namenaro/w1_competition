@@ -27,12 +27,13 @@ class Situation:
             dist = abs(indexes_new[i])
             subsample_len = dist + 1
             statistic_distr = get_distr_of_max_statistics(win_distr, subsample_len)
-            if slayter_val >= 0:
-                profit = statistic_distr.get_p_of_event(left=0, right=slayter_val)
-                components.append(profit)
-            else:
-                defeat = -statistic_distr.get_p_of_event(left=slayter_val, right=0)
-                components.append(defeat)
+
+
+
+            if slayter_val >=0:
+                component = 1 - statistic_distr.get_p_of_event(slayter_val, statistic_distr.get_max_val())
+                components.append(component)
+
 
         w = sum(components)
         return w
