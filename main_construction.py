@@ -7,7 +7,7 @@ import statistics
 
 def mismatch(old, new):
     mismatches = list([abs(old[i] - new[i]) for i in range(len(old))])
-    return sum(mismatches)
+    return sum(mismatches)/len(mismatches)
 
 def get_e(old, new):
     e = abs(old - new)
