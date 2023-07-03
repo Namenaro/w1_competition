@@ -24,6 +24,7 @@ class Distr:
 
     def get_random_subsample(self, len_subsample):
         subsample = random.sample(self.sample, len_subsample)
+        #subsample = [random.choice(self.sample) for _ in range(len_subsample)]
         return subsample
 
     def get_main_sample(self):
@@ -53,7 +54,7 @@ class Distr:
 def get_distr_of_min_statistics(main_distr, len_subsample):
     statistics_sample = []
 
-    NUM_EXPERIMENTS = 100
+    NUM_EXPERIMENTS = 1120
     for _ in range(NUM_EXPERIMENTS):
         subsample = main_distr.get_random_subsample(len_subsample)
         statistics_sample.append(min(subsample))
@@ -62,7 +63,7 @@ def get_distr_of_min_statistics(main_distr, len_subsample):
 def get_distr_of_max_statistics(main_distr, len_subsample):
     statistics_sample = []
 
-    NUM_EXPERIMENTS = 100
+    NUM_EXPERIMENTS = 1120
     for _ in range(NUM_EXPERIMENTS):
         subsample = main_distr.get_random_subsample(len_subsample)
         statistics_sample.append(max(subsample))

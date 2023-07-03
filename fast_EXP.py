@@ -75,14 +75,14 @@ def t_4(w_func):
 
    vals_ = [1, 7,7,7]
    index_ = 0
-   predicted_val_ = 1
+   predicted_val_ = 1.01
    w1 = w_func(vals_, index_, predicted_val_, log)
 
    print("    w = " + float_to_str(w1))
 
    vals_ = [1, 2, 3, 4]
    index_ = 0
-   predicted_val_ = 1
+   predicted_val_ = 1.01
    w2 = w_func(vals_, index_, predicted_val_, log)
    print("    w = " + float_to_str(w2))
    if w1<w2:
@@ -150,9 +150,9 @@ def t_8(w_func):
    print("")
    print('\033[95m' + "===================================================")
    print("                8.Должно уменьшаться:    " + '\033[0m')
-   vals_ = [3, 3, 3, 3, 3, 89]
+   vals_ = [3, 3, 3, 3, 3, 100]
    index_ = 5
-   predicted_val_ = 89
+   predicted_val_ = 100
    w1=w_func(vals_, index_, predicted_val_, log)
    print("    w = " + float_to_str(w1))
 
